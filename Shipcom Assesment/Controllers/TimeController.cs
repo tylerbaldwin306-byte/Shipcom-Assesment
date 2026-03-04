@@ -13,11 +13,9 @@ namespace Shipcom_Assesment.Controllers
         /// <summary>
         /// Calculate the total angle of the clock hands for a given time, or hour and minute.
         /// </summary>
-        /// <param name="timeAngleRequest"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("CalculateTimeAngle")]
-        public ActionResult<double> CaulculateTimeAngle(
+        /// <returns>The total angle of the clock hands</returns>
+        [HttpGet("CalculateTimeAngle")]
+        public ActionResult<double> CalculateTimeAngle(
             [FromQuery] string? time, 
             [FromQuery] int? hour, 
             [FromQuery] int? minute)
@@ -53,7 +51,7 @@ namespace Shipcom_Assesment.Controllers
             {
                 if (!TimeOnly.TryParseExact(time, TimeConstants.TIME_FORMAT, out TimeOnly parsedTime))
                 {
-                    throw new ArgumentException(nameof(time), $"Time '{time}' could not be parsed to format '{TimeConstants.TIME_FORMAT}'");
+                    throw new ArgumentException($"Time '{time}' could not be parsed to format '{TimeConstants.TIME_FORMAT}'", nameof(time));
                 }
 
                 return (parsedTime.Hour, parsedTime.Minute);
