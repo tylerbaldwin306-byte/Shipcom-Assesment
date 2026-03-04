@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="Shipcom Assesment/Shipcom Assesment.csproj" />
+  <Project Path="Shipcom Assesment/ShipcomAssesment.csproj" />
+  <Project Path="ShipcomAssesment.UnitTest/ShipcomAssesment.UnitTest.csproj" Id="0a3e2a24-bb5e-48f0-a609-5a7846ddace9" />
 </Solution>
